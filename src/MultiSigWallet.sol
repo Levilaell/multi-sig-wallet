@@ -100,7 +100,7 @@ contract MultiSigWallet {
                 count++;
             }
         }
-        require(count >= required);
+        require(count >= required, "required not enough");
 
         Transaction storage txn = transactions[txId];
         txn.executed = true;
